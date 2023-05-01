@@ -1,7 +1,6 @@
-import { Icon, IconProps } from "@spark-ui/icon";
 import { SVGProps } from "react";
 
-export type LogoProps = Omit<SVGProps<SVGElement>, "children">;
+export type LogoProps = Omit<SVGProps<SVGSVGElement>, "children">;
 
 export const LogoIcon = (props: LogoProps) => {
   return (
