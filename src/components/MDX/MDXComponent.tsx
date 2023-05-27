@@ -6,6 +6,7 @@ import { H2 } from "./H2";
 import { H3 } from "./H3";
 import { Code } from "./Code";
 import { P } from "./P";
+import { ElementType } from "react";
 
 const components = {
   h1: H1,

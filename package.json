@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "contentlayer dev & next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "scrape": "node scripts/scrape.mjs"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.6.1",
+    "@microsoft/fetch-event-source": "^2.0.1",
     "@spark-ui/button": "^1.9.1",
     "@spark-ui/icon": "^1.5.9",
     "@spark-ui/icon-button": "^1.1.6",
@@ -16,12 +18,13 @@
     "@spark-ui/slot": "^1.4.5",
     "@spark-ui/tailwind-plugins": "^2.10.2",
     "@spark-ui/theme-utils": "^2.14.1",
+    "@supabase/supabase-js": "^2.21.0",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "contentlayer": "0.3.1",
     "copy-to-clipboard": "^3.3.3",
     "cva": "^0.0.0",
-    "date-fns": "2.29.3",
+    "langchain": "^0.0.68",
     "next": "13.3.2",
     "next-contentlayer": "0.3.1",
     "next-themes": "^0.2.1",
@@ -29,11 +32,13 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-live": "^4.0.0",
+    "react-markdown": "^8.0.7",
     "tailwind-merge": "^1.12.0"
   },
   "devDependencies": {
     "@types/react": "18.0.38",
     "autoprefixer": "^10.4.14",
+    "dotenv": "^16.0.3",
     "postcss": "^8.4.23",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.1.0",

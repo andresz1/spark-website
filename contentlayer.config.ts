@@ -2,6 +2,7 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import * as examples from "./src/examples";
 
 export const Doc = defineDocumentType(() => ({
   name: "Doc",
@@ -26,7 +27,17 @@ export const Doc = defineDocumentType(() => ({
     },
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
+      resolve: (doc) => {
+        const slug = doc._raw.sourceFileName.replace(/\.mdx$/, "");
+        return slug;
+      },
+    },
+    examples: {
+      type: "json",
+      resolve: (doc) => {
+        const slug = doc._raw.sourceFileName.replace(/\.mdx$/, "");
+        return examples[slug];
+      },
     },
   },
 }));

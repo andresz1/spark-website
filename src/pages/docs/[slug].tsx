@@ -44,7 +44,10 @@ const DocDetailPage = ({ categories, doc }: DocDetailPageProps) => {
           </SideNav>
 
           <div className="flex-1 min-w-0">
-            <MDXComponent code={doc.body.code} />
+            <MDXComponent
+              code={doc.body.code}
+              globals={{ examples: doc.examples }}
+            />
           </div>
         </Container>
       </main>
